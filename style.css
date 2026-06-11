@@ -1,1 +1,265 @@
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+body {
+    background-color: #f4f7f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Títulos Globais */
+h2 {
+    text-align: center;
+    color: #2e6f40; /* Verde Agrícola */
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO (HEADER & NAV)
+   ========================================================================== */
+header {
+    background-color: #1b4d22;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #a3e635; /* Verde claro ao passar o mouse */
+}
+
+/* ==========================================================================
+   3. BANNER PRINCIPAL (HOME)
+   ========================================================================== */
+.banner {
+    position: relative;
+    max-width: 100%;
+    padding: 0;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%); /* Escurece a imagem para destacar o texto */
+}
+
+.banner-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    width: 90%;
+}
+
+.banner-texto h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.btn {
+    display: inline-block;
+    background-color: #84cc16;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #65a30d;
+}
+
+/* ==========================================================================
+   4. ESTRUTURA DE GRIDS E CARDS (PRODUÇÃO, DESAFIOS, SOLUÇÕES, ECO)
+   ========================================================================== */
+#producao p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.grid, .cards-ecologicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-50px); /* Efeito flutuante leve */
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    color: #1b4d22;
+    padding: 20px 20px 10px 20px;
+}
+
+.card p {
+    padding: 0 20px 20px 20px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   5. FORMULÁRIO DE CONTATO
+   ========================================================================== */
+#contato {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1b4d22;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #2e6f40;
+}
+
+form button {
+    width: 100%;
+    background-color: #1b4d22;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #2e6f40;
+}
+
+#contato p {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* ==========================================================================
+   6. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #111;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE (MOBILE-FIRST ADAPTATIONS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .banner {
+        height: 50vh;
+    }
+
+    .banner-texto h2 {
+        font-size: 1.8rem;
+    }
+}
